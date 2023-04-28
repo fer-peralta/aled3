@@ -1,0 +1,23 @@
+nav {
+    background-color: var(--oxford-blue);
+    color: var(--dodger-blue);
+    font-weight: bold;
+    height: 40px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+li {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+li:hover {
+    color: var(--sky-blue);
+    transition: 0.5s;
+}
