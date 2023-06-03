@@ -1,12 +1,15 @@
 <table>
     <tbody>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Surname</th>
+        <th *ngFor="let head of tableHead">{{head}}</th>
         <tr *ngFor="let student of studentList">
             <td>{{student.id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.surname}}</td>
+            <td>{{student.subject}}</td>
+            <td>{{student.note}}</td>
+            <td><button class="edit-button">Editar</button></td>
+            <td><button class="delete-button">Borrar</button></td>
         </tr>
     </tbody>
 </table>
+<app-edit-student></app-edit-student>

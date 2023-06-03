@@ -7,16 +7,22 @@ import { Student } from 'src/app/models/student.list'
   styleUrls: ['./student-table.component.css']
 })
 export class StudentTableComponent {
-  studentList: Student[] = [
+  tableHead: Array<String> = ['ID', 'Name', 'Surname', 'Subject', 'Note']
+
+  studentList: Array<Student> = [
     {
       id: 1,
       name: 'Fernando',
-      surname: 'Peralta'
+      surname: 'Peralta',
+      subject: 'Algoritmo III',
+      note: 8
     },
     {
       id: 2,
       name: 'Benjamín',
-      surname: 'Peralta'
+      surname: 'Peralta',
+      subject: 'Ingeniería de software II',
+      note: 10
     }
   ]
 }
