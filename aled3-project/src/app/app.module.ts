@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { StudentTableComponent } from './components/student-table/student-table.component'
 import { EditStudentComponent } from './components/edit-student/edit-student.component'
 
@@ -15,7 +15,7 @@ import { EditStudentComponent } from './components/edit-student/edit-student.com
     StudentTableComponent,
     EditStudentComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

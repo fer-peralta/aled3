@@ -1,4 +1,19 @@
-<input type="text" name="name">
-<input type="text" name="surname">
-<input type="text" name="subject">
-<input type="text" name="note">
+<form [formGroup]="editForm" (ngSubmit)="studentEdit()">
+    <label class="edit-label" for="name">Name</label>
+    <input class="edit-input" formControlName="name" type="text" name="name">
+    <label class="edit-label" for="surname">Surname</label>
+    <input class="edit-input" formControlName="surname" type="text" name="surname">
+    <label class="edit-label" for="subject">Subject</label>
+    <select class="edit-input" formControlName="subject">
+        <option value="">Algoritmo III</option>
+        <option value="">Prácticas profesionalizantes III</option>
+        <option value="">Inglés III</option>
+        <option value="">Aspectos legales de la profesión</option>
+        <option value="">Seminario de actualización</option>
+        <option value="">Redes y comunicaciones</option>
+        <option value="">Ingeniería de software II</option>
+    </select>
+    <label class="edit-label" for="note">Note</label>
+    <input class="edit-input" formControlName="note" type="number" name="note">
+    <input type="submit">
+</form>
