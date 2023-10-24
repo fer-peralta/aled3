@@ -6,3 +6,12 @@
     min-width: 250px;
     text-align: center;
 }
+
+.edit-label,
+button.edit-input {
+    margin-top: 10px;
+}
+
+.input-error {
+    color: rgba(231, 68, 68, 0.788);
+}

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { StudentTableComponent } from './components/student-table/student-table.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: StudentTableComponent
+    loadChildren: () =>
+      import('./features/students/students.module').then(m => m.StudentsModule)
   }
 ]
 

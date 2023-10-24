@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { NavBarComponent } from './components/nav-bar/nav-bar.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { StudentTableComponent } from './components/student-table/student-table.component'
-import { EditStudentComponent } from './components/edit-student/edit-student.component'
+import { NavBarComponent } from './core/components/nav-bar/nav-bar.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MaterialModule } from './core/modules/material.module'
+import { ToastService, AngularToastifyModule } from 'angular-toastify'
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    StudentTableComponent,
-    EditStudentComponent
+  declarations: [AppComponent, NavBarComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    AngularToastifyModule
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
