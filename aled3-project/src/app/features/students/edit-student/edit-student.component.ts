@@ -4,6 +4,8 @@ import { Student } from 'src/app/core/models/student.list'
 import { StudentsService } from 'src/app/core/services/students.service'
 import { Subscription } from 'rxjs'
 import { ActivatedRoute, Router } from '@angular/router'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { NotificationsService } from 'src/app/core/services/notifications.service'
 
 @Component({
   selector: 'app-edit-student',
@@ -21,7 +23,9 @@ export class EditStudentComponent {
     private fb: FormBuilder,
     private _StudentsService: StudentsService,
     private _ActivatedRoute: ActivatedRoute,
-    private route: Router
+    private route: Router,
+    private snackbar: MatSnackBar,
+    private _NotificationsService: NotificationsService
   ) {
     this.editForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -58,7 +62,10 @@ export class EditStudentComponent {
         student.active = true
       })
       this.sus = this._StudentsService.addStudent(student).subscribe(data => {
-        alert('estudiante creado correctamente')
+        this._NotificationsService.showNotification(
+          'El estudiante fue ingresado correctamente',
+          'ok'
+        )
         this.route.navigate(['/students'])
       })
     } else if (this.mode == 'update') {
@@ -66,7 +73,10 @@ export class EditStudentComponent {
         .updateStudent(this.studentId, student)
         .subscribe(data => {
           student.id = this.studentId
-          alert('estudiante creado correctamente')
+          this._NotificationsService.showNotification(
+            'El estudiante fue actualizado correctamente',
+            'ok'
+          )
         })
       this.route.navigate(['/students'])
     }

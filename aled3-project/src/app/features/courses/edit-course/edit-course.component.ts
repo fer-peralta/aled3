@@ -4,6 +4,7 @@ import { Course } from 'src/app/core/models/course.list'
 import { CoursesService } from 'src/app/core/services/courses.service'
 import { Subscription } from 'rxjs'
 import { ActivatedRoute, Router } from '@angular/router'
+import { NotificationsService } from 'src/app/core/services/notifications.service'
 
 @Component({
   selector: 'app-edit-course',
@@ -21,7 +22,8 @@ export class EditCourseComponent {
     private fb: FormBuilder,
     private _CoursesService: CoursesService,
     private _ActivatedRoute: ActivatedRoute,
-    private route: Router
+    private route: Router,
+    private _NotificationsService: NotificationsService
   ) {
     this.editForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -55,15 +57,21 @@ export class EditCourseComponent {
         course.active = true
       })
       this.sus = this._CoursesService.addCourse(course).subscribe(data => {
-        alert('curso creado correctamente')
-        this.route.navigate(['/students'])
+        this._NotificationsService.showNotification(
+          'El curso fue actualizado correctamente',
+          'ok'
+        )
+        this.route.navigate(['/courses'])
       })
     } else if (this.mode == 'update') {
       this.sus = this._CoursesService
         .updateCourse(this.courseId, course)
         .subscribe(data => {
           course.id = this.courseId
-          alert('curso creado correctamente')
+          this._NotificationsService.showNotification(
+            'El curso fue actualizado correctamente',
+            'ok'
+          )
         })
       this.route.navigate(['/courses'])
     }

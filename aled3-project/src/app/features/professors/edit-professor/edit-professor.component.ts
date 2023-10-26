@@ -4,6 +4,7 @@ import { Professor } from 'src/app/core/models/professors.list'
 import { ProfessorsService } from 'src/app/core/services/professors.service'
 import { Subscription } from 'rxjs'
 import { ActivatedRoute, Router } from '@angular/router'
+import { NotificationsService } from 'src/app/core/services/notifications.service'
 
 @Component({
   selector: 'app-edit-professor',
@@ -21,7 +22,8 @@ export class EditProfessorComponent {
     private fb: FormBuilder,
     private _ProfessorsService: ProfessorsService,
     private _ActivatedRoute: ActivatedRoute,
-    private route: Router
+    private route: Router,
+    private _NotificationsService: NotificationsService
   ) {
     this.editForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -58,17 +60,23 @@ export class EditProfessorComponent {
       this.sus = this._ProfessorsService
         .addProfessor(professor)
         .subscribe(data => {
-          alert('profesor creado correctamente')
-          this.route.navigate(['/profesor'])
+          this._NotificationsService.showNotification(
+            'El profesor fue actualizado correctamente',
+            'ok'
+          )
+          this.route.navigate(['/professors'])
         })
     } else if (this.mode == 'update') {
       this.sus = this._ProfessorsService
         .updateProfessor(this.professorId, professor)
         .subscribe(data => {
           professor.id = this.professorId
-          alert('profesor creado correctamente')
+          this._NotificationsService.showNotification(
+            'El profesor fue actualizado correctamente',
+            'ok'
+          )
         })
-      this.route.navigate(['/professor'])
+      this.route.navigate(['/professors'])
     }
   }
 
