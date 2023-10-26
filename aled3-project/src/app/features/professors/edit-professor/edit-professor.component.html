@@ -1,0 +1,21 @@
+<form [formGroup]="editForm" (ngSubmit)="professorEdit()">
+    <label class="edit-label" for="name">Name</label>
+    <input class="edit-input" formControlName="name" type="text" name="name" required placeholder="Manuel">
+    <span class="edit-input input-error" *ngIf="this.editForm.get('name')?.errors?.['required']">*(El nombre no puede
+        quedar
+        vacío)</span>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('name')?.errors?.['minlength']">*(Ingrese como mínimo
+        2
+        caracteres)</span>
+    <label class="edit-label" for="surname">Surname</label>
+    <input class="edit-input" formControlName="surname" type="text" name="surname" required placeholder="Belgrano">
+    <span class="edit-input input-error" *ngIf="this.editForm.get('surname')?.errors?.['required']">*(El nombre no puede
+        quedar
+        vacío)</span>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('surname')?.errors?.['minlength']">*(Ingrese como
+        mínimo 2
+        caracteres)</span>
+    <button type="submit" mat-raised-button color="primary" class="edit-input" [disabled]="editForm.invalid">
+        {{mode}}
+    </button>
+</form>

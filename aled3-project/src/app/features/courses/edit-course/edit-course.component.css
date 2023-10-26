@@ -1,0 +1,24 @@
+.edit-label,
+.edit-input {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    min-width: 250px;
+    text-align: center;
+}
+
+.edit-label,
+button.edit-input {
+    margin-top: 10px;
+}
+
+.input-error {
+    color: rgba(231, 68, 68, 0.788);
+}
+
+button.form-button {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+}

@@ -1,5 +1,6 @@
+// import type { Subject } from './course.list'
 export interface Student {
-  id?: Number
+  id?: number
   active?: boolean
   name: String
   surname: String

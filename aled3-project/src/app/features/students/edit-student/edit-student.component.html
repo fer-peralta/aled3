@@ -32,7 +32,7 @@
     <span class="edit-input input-error" *ngIf="this.editForm.get('note')?.errors?.['required']">*(La nota no puede
         quedar
         vacío)</span>
-    <button type="submit" mat-raised-button color="primary" class="ancho button" [disabled]="editForm.invalid">
+    <button type="submit" mat-raised-button color="primary" class="edit-input" [disabled]="editForm.invalid">
         {{mode}}
     </button>
 </form>

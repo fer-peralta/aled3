@@ -48,16 +48,27 @@ export class EditStudentComponent {
   studentEdit () {
     const student: Student = this.editForm.value
     if (this.mode == 'create') {
+      this._StudentsService.getStudents().subscribe(data => {
+        let lastValue = data[data.length - 1]
+        let lastId = lastValue.id
+        if (lastId !== undefined) {
+          lastId++
+          student.id = lastId
+        }
+        student.active = true
+      })
       this.sus = this._StudentsService.addStudent(student).subscribe(data => {
         alert('estudiante creado correctamente')
-        this.route.navigate(['/'])
+        this.route.navigate(['/students'])
       })
     } else if (this.mode == 'update') {
       this.sus = this._StudentsService
         .updateStudent(this.studentId, student)
         .subscribe(data => {
+          student.id = this.studentId
           alert('estudiante creado correctamente')
         })
+      this.route.navigate(['/students'])
     }
   }
 
