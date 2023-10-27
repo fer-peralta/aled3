@@ -4,11 +4,14 @@ export interface Student {
   active?: boolean
   name: String
   surname: String
-  subject: Subject
-  note: Number
+  course: Course
+  address: String
+  birthDate: String
+  phone: number
+  email: String
 }
 
-export type Subject =
+export type Course =
   | 'Algoritmos y estructuras de datos III'
   | 'Ingeniería de software II'
   | 'Inglés III'

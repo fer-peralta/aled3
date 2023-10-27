@@ -2,7 +2,7 @@ nav {
     background-color: var(--oxford-blue);
     color: var(--dodger-blue);
     font-weight: bold;
-    height: 40px;
+    height: 60px;
 }
 
 ul {
@@ -15,6 +15,7 @@ ul {
 li {
     margin-left: 20px;
     cursor: pointer;
+    font-size: 20px;
 }
 
 li:hover {

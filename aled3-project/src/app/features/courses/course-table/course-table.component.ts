@@ -19,6 +19,8 @@ export class CourseTableComponent {
     'Name',
     'Professor',
     'Carrer',
+    'YearOfTheCarrer',
+    'HoursPerWeek',
     'active',
     'actions'
   ]

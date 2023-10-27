@@ -28,7 +28,9 @@ export class EditCourseComponent {
     this.editForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       professor: ['', [Validators.required, Validators.minLength(2)]],
-      carrer: ['', [Validators.required, Validators.minLength(2)]]
+      carrer: ['', [Validators.required]],
+      year: ['', [Validators.required]],
+      hoursPerWeek: ['', [Validators.required]]
     })
   }
   ngOnInit () {

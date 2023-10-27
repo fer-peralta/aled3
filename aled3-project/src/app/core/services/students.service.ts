@@ -12,16 +12,45 @@ export class StudentsService {
       active: true,
       name: 'Fernando',
       surname: 'Peralta',
-      subject: 'Algoritmos y estructuras de datos III',
-      note: 8
+      course: 'Algoritmos y estructuras de datos III',
+      address: 'San Martin 1816, Florencio Varela, Buenos Aires, Argentina',
+      birthDate: '2005-03-25',
+      phone: 1122334455,
+      email: 'fernando@itbeltran.com.ar'
     },
     {
       id: 2,
       active: true,
       name: 'Benjamín',
       surname: 'Peralta',
-      subject: 'Ingeniería de software II',
-      note: 10
+      course: 'Ingeniería de software II',
+      address:
+        'Manuel Belgrano 1810, Florencio Varela, Buenos Aires, Argentina',
+      birthDate: '2000-02-02',
+      phone: 1132454563,
+      email: 'benjamin@itbeltran.com.ar'
+    },
+    {
+      id: 3,
+      active: true,
+      name: 'Ricardo',
+      surname: 'Sarmiento',
+      course: 'Inglés III',
+      address: 'Bartolomé Mitre 23, Avellaneda, Buenos Aires, Argentina',
+      birthDate: '2002-05-02',
+      phone: 1157964527,
+      email: 'ricardo@itbeltran.com.ar'
+    },
+    {
+      id: 4,
+      active: true,
+      name: 'Julia',
+      surname: 'Akira',
+      course: 'Algoritmos y estructuras de datos III',
+      address: 'Santa Fe 2001, Recoleta, Ciudad de Buenos Aires, Argentina',
+      birthDate: '2007-12-12',
+      phone: 1146474843,
+      email: 'julia@itbeltran.com.ar'
     }
   ]
 

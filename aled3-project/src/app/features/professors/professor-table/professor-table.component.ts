@@ -14,7 +14,17 @@ export class ProfessorTableComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator
   professorList!: Array<Professor>
 
-  displayedColumns: string[] = ['ID', 'Name', 'Surname', 'active', 'actions']
+  displayedColumns: string[] = [
+    'ID',
+    'Name',
+    'Surname',
+    'BirthDate',
+    'Address',
+    'Phone',
+    'Email',
+    'active',
+    'actions'
+  ]
   sus?: Subscription
   dataSource!: any
 

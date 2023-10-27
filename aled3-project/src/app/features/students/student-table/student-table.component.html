@@ -27,24 +27,39 @@
             <td mat-cell *matCellDef="let student">{{ student.surname }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="Subject">
-            <th mat-header-cell *matHeaderCellDef>Subject</th>
-            <td mat-cell *matCellDef="let student">{{ student.subject }}</td>
+        <ng-container matColumnDef="Course">
+            <th mat-header-cell *matHeaderCellDef>Curso</th>
+            <td mat-cell *matCellDef="let student">{{ student.course }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="Note">
-            <th mat-header-cell *matHeaderCellDef>Note</th>
-            <td mat-cell *matCellDef="let student">{{ student.note }}</td>
+        <ng-container matColumnDef="BirthDate">
+            <th mat-header-cell *matHeaderCellDef>Fecha de nacimiento</th>
+            <td mat-cell *matCellDef="let student">{{ student.birthDate | date }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef>Dirección</th>
+            <td mat-cell *matCellDef="let student">{{ student.address }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Phone">
+            <th mat-header-cell *matHeaderCellDef>Teléfono</th>
+            <td mat-cell *matCellDef="let student">{{ student.phone }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let student">{{ student.email }}</td>
         </ng-container>
 
         <ng-container matColumnDef="active">
-            <th mat-header-cell *matHeaderCellDef>active</th>
-            <td mat-cell *matCellDef="let student">{{active(student.active)}}
+            <th mat-header-cell *matHeaderCellDef>Estado</th>
+            <td mat-cell *matCellDef="let student">{{student.active | active}}
             </td>
         </ng-container>
 
         <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
             <td mat-cell *matCellDef="let student ; let i = index">
                 <a class="pointer" style="color: #6f461f;" matTooltip="Editar estudiante"
                     [routerLink]="['./edit', student.id]">

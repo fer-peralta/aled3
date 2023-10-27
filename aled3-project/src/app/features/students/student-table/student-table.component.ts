@@ -18,8 +18,11 @@ export class StudentTableComponent {
     'ID',
     'Name',
     'Surname',
-    'Subject',
-    'Note',
+    'Course',
+    'BirthDate',
+    'Address',
+    'Phone',
+    'Email',
     'active',
     'actions'
   ]

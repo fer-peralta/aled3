@@ -1,5 +1,5 @@
 <form [formGroup]="editForm" (ngSubmit)="studentEdit()">
-    <label class="edit-label" for="name">Name</label>
+    <label class="edit-label" for="name">Nombre</label>
     <input class="edit-input" formControlName="name" type="text" name="name" required placeholder="Manuel">
     <span class="edit-input input-error" *ngIf="this.editForm.get('name')?.errors?.['required']">*(El nombre no puede
         quedar
@@ -7,7 +7,7 @@
     <span class="edit-input input-error" *ngIf="this.editForm.get('name')?.errors?.['minlength']">*(Ingrese como mínimo
         2
         caracteres)</span>
-    <label class="edit-label" for="surname">Surname</label>
+    <label class="edit-label" for="surname">Apellido</label>
     <input class="edit-input" formControlName="surname" type="text" name="surname" required placeholder="Belgrano">
     <span class="edit-input input-error" *ngIf="this.editForm.get('surname')?.errors?.['required']">*(El nombre no puede
         quedar
@@ -15,8 +15,8 @@
     <span class="edit-input input-error" *ngIf="this.editForm.get('surname')?.errors?.['minlength']">*(Ingrese como
         mínimo 2
         caracteres)</span>
-    <label class="edit-label" for="subject">Subject</label>
-    <select class="edit-input" formControlName="subject" required>
+    <label class="edit-label" for="course">Curso</label>
+    <select class="edit-input" formControlName="course" required>
         <option value="Algoritmos y estructuras de datos III">Algoritmos y estructuras de datos III</option>
         <option value="Ingeniería de software II">Ingeniería de software II</option>
         <option value="Prácticas profesionalizantes III">Prácticas profesionalizantes III</option>
@@ -25,11 +25,50 @@
         <option value="Seminario de actualización">Seminario de actualización</option>
         <option value="Redes y comunicaciones">Redes y comunicaciones</option>
     </select>
-    <span class="edit-input input-error" *ngIf="this.editForm.get('subject')?.errors?.['required']">*(Seleccione al
+    <span class="edit-input input-error" *ngIf="this.editForm.get('course')?.errors?.['required']">*(Seleccione al
         menos una materia)</span>
-    <label class="edit-label" for="note">Note</label>
-    <input class="edit-input" formControlName="note" type="number" name="note" required>
-    <span class="edit-input input-error" *ngIf="this.editForm.get('note')?.errors?.['required']">*(La nota no puede
+    <label class="edit-label" for="birthDate">Fecha de nacimiento</label>
+    <input class="edit-input" formControlName="birthDate" type="date" name="birthDate" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('birthDate')?.errors?.['required']">*(La fecha de
+        nacimiento no puede
+        quedar
+        vacía)</span>
+    <label class="edit-label" for="street">Calle</label>
+    <input class="edit-input" formControlName="street" type="text" name="street" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('street')?.errors?.['required']">*(La calle no
+        puede
+        quedar
+        vacía)</span>
+    <label class="edit-label" for="numberOfStreet">Altura</label>
+    <input class="edit-input" formControlName="numberOfStreet" type="number" name="numberOfStreet" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('numberOfStreet')?.errors?.['required']">*(La altura
+        no puede
+        quedar
+        vacía)</span>
+    <label class="edit-label" for="country">País</label>
+    <input class="edit-input" formControlName="country" type="text" name="country" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('country')?.errors?.['required']">*(El país no puede
+        quedar
+        vacío)</span>
+    <label class="edit-label" for="province">Provincia</label>
+    <input class="edit-input" formControlName="province" type="text" name="province" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('province')?.errors?.['required']">*(La provincia no
+        puede
+        quedar
+        vacía)</span>
+    <label class="edit-label" for="city">Localidad</label>
+    <input class="edit-input" formControlName="city" type="text" name="city" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('city')?.errors?.['required']">*(La ciudad no puede
+        quedar
+        vacía)</span>
+    <label class="edit-label" for="phone">Teléfono</label>
+    <input class="edit-input" formControlName="phone" type="tel" name="phone" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('phone')?.errors?.['required']">*(El teléfono no puede
+        quedar
+        vacío)</span>
+    <label class="edit-label" for="email">Email</label>
+    <input class="edit-input" formControlName="email" type="email" name="email" required>
+    <span class="edit-input input-error" *ngIf="this.editForm.get('email')?.errors?.['required']">*(El email no puede
         quedar
         vacío)</span>
     <button type="submit" mat-raised-button color="primary" class="edit-input" [disabled]="editForm.invalid">

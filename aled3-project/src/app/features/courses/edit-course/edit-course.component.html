@@ -24,6 +24,20 @@
     </select>
     <span class="edit-input input-error" *ngIf="this.editForm.get('carrer')?.errors?.['required']">*(Seleccione al
         menos una materia)</span>
+    <label class="edit-label" for="year">Año de la carrera</label>
+    <input class="edit-input" formControlName="year" type="number" name="year" required placeholder="1">
+    <span class="edit-input input-error" *ngIf="this.editForm.get('year')?.errors?.['required']">*(El año de la carrera
+        no
+        puede
+        quedar
+        vacío)</span>
+    <label class="edit-label" for="hoursPerWeek">Horas semanales</label>
+    <input class="edit-input" formControlName="hoursPerWeek" type="number" name="hoursPerWeek" required placeholder="1">
+    <span class="edit-input input-error" *ngIf="this.editForm.get('year')?.errors?.['required']">*(El año de la carrera
+        no
+        puede
+        quedar
+        vacío)</span>
     <button type="submit" mat-raised-button color="primary" class="edit-input" [disabled]="editForm.invalid">
         {{mode}}
     </button>

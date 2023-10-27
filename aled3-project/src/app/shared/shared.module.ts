@@ -11,9 +11,10 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { ActivePipe } from './pipes/active.pipe'
 
 @NgModule({
-  declarations: [],
+  declarations: [ActivePipe],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -38,7 +39,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     MatFormFieldModule,
     MatButtonModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ActivePipe
   ]
 })
 export class SharedModule {}

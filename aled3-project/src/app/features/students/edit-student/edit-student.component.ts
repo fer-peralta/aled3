@@ -30,8 +30,15 @@ export class EditStudentComponent {
     this.editForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       surname: ['', [Validators.required, Validators.minLength(2)]],
-      subject: ['', [Validators.required]],
-      note: ['', [Validators.required]]
+      course: ['', [Validators.required]],
+      birthDate: ['', [Validators.required]],
+      country: ['', [Validators.required]],
+      province: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      street: ['', [Validators.required]],
+      numberOfStreet: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      email: ['', [Validators.required]]
     })
   }
 
@@ -40,17 +47,39 @@ export class EditStudentComponent {
     if (this.studentId != 0) {
       this.sus = this._StudentsService
         .getStudentById(this.studentId)
-        .subscribe(res => {
-          delete res.id
-          delete res.active
+        .subscribe(data => {
+          delete data.id
+          delete data.active
           this.mode = 'update'
-          this.editForm.setValue(res)
+          const address = data.address.split(',')
+          let street = address[0].split(' ')
+          const streetNumber = street[street.length - 1]
+          street.pop()
+          const streetString = street.toString()
+          const streetModified = streetString.replace(',', ' ')
+          let object: any = data
+          object.street = streetModified
+          object.numberOfStreet = streetNumber
+          object.city = address[1]
+          object.province = address[2]
+          object.country = address[3]
+          delete object.address
+          this.editForm.setValue(data)
         })
     }
   }
 
   studentEdit () {
-    const student: Student = this.editForm.value
+    const form = this.editForm.value
+    const address = `${form.street} ${form.numberOfStreet}, ${form.city}, ${form.province}, ${form.country}`
+    delete form.street
+    delete form.numberOfStreet
+    delete form.city
+    delete form.province
+    delete form.country
+    form.address = address
+    const student: Student = form
+
     if (this.mode == 'create') {
       this._StudentsService.getStudents().subscribe(data => {
         let lastValue = data[data.length - 1]

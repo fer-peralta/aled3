@@ -11,13 +11,41 @@ export class ProfessorsService {
       id: 1,
       active: true,
       name: 'Manuel',
-      surname: 'Belgrano'
+      surname: 'Belgrano',
+      address: 'Belgrano 1043, Avellaneda, Buenos Aires, Argentina',
+      birthDate: '1972-12-11',
+      phone: 1164736559,
+      email: 'manuel@itbeltran.com.ar'
     },
     {
       id: 2,
       active: true,
       name: 'Juan',
-      surname: 'Perez'
+      surname: 'Perez',
+      address: 'Córdoba 767, San Nicolás, Ciudad de Buenos Aires, Argentina',
+      birthDate: '1977-06-27',
+      phone: 1147565428,
+      email: 'juan@itbeltran.com.ar'
+    },
+    {
+      id: 3,
+      active: true,
+      name: 'Juana',
+      surname: 'Romero Plaz',
+      address: 'Bartolomé Mitre 23, Quilmes, Buenos Aires, Argentina',
+      birthDate: '1968-06-27',
+      phone: 1147989726,
+      email: 'juana@itbeltran.com.ar'
+    },
+    {
+      id: 4,
+      active: true,
+      name: 'Maria del Carmen',
+      surname: 'Panon',
+      address: 'Roma 34, Avellaneda, Buenos Aires, Argentina',
+      birthDate: '1991-06-23',
+      phone: 1125334698,
+      email: 'mariadelcarmen@itbeltran.com.ar'
     }
   ]
 

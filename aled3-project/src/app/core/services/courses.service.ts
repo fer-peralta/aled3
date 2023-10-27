@@ -12,14 +12,36 @@ export class CoursesService {
       active: true,
       name: 'Inglés III',
       professor: 'Juan Perez',
-      carrer: 'Análisis de sistemas'
+      carrer: 'Análisis de sistemas',
+      year: 3,
+      hoursPerWeek: 2
     },
     {
       id: 2,
       active: true,
       name: 'Análisis matemático II',
-      professor: 'Juan Perez',
-      carrer: 'Análisis de sistemas'
+      professor: 'Maria del Carmen Panon',
+      carrer: 'Análisis de sistemas',
+      year: 2,
+      hoursPerWeek: 2
+    },
+    {
+      id: 3,
+      active: true,
+      name: 'Prácticas profesionalizantes III',
+      professor: 'Manuel Belgrano',
+      carrer: 'Análisis de sistemas',
+      year: 3,
+      hoursPerWeek: 6
+    },
+    {
+      id: 4,
+      active: true,
+      name: 'Algoritmos y estructuras de datos III',
+      professor: 'Manuel Belgrano',
+      carrer: 'Análisis de sistemas',
+      year: 3,
+      hoursPerWeek: 4
     }
   ]
 
@@ -46,7 +68,6 @@ export class CoursesService {
     if (index !== -1) {
       this.courseList[index] = updatedCourse
     }
-    console.log(this.courseList)
     return of([...this.courseList])
   }
 

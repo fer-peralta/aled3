@@ -8,8 +8,8 @@ import { EditCourseComponent } from './edit-course/edit-course.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 const courseRoutes: Routes = [
-  { path: 'courses', component: CourseTableComponent },
-  { path: 'courses/edit/:id', component: EditCourseComponent }
+  { path: '', component: CourseTableComponent },
+  { path: 'edit/:id', component: EditCourseComponent }
 ]
 
 @NgModule({

@@ -4,4 +4,8 @@ export interface Professor {
   active?: boolean
   name: String
   surname: String
+  address: String
+  birthDate: String
+  phone: number
+  email: String
 }
