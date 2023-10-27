@@ -53,13 +53,13 @@ export class EditProfessorComponent {
           const streetNumber = street[street.length - 1]
           street.pop()
           const streetString = street.toString()
-          const streetModified = streetString.replace(',', ' ')
+          const streetModified = streetString.replaceAll(',', ' ')
           let object: any = data
           object.street = streetModified
           object.numberOfStreet = streetNumber
-          object.city = address[1]
-          object.province = address[2]
-          object.country = address[3]
+          object.city = address[address.length - 3]
+          object.province = address[address.length - 2]
+          object.country = address[address.length - 1]
           delete object.address
           this.editForm.setValue(data)
         })

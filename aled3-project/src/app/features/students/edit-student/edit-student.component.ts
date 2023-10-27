@@ -56,7 +56,7 @@ export class EditStudentComponent {
           const streetNumber = street[street.length - 1]
           street.pop()
           const streetString = street.toString()
-          const streetModified = streetString.replace(',', ' ')
+          const streetModified = streetString.replaceAll(',', ' ')
           let object: any = data
           object.street = streetModified
           object.numberOfStreet = streetNumber
