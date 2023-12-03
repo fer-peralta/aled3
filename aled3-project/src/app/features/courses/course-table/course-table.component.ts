@@ -45,7 +45,6 @@ export class CourseTableComponent {
   loadTable () {
     this._CoursesService.getCourses().subscribe(data => {
       this.courseList = data
-      console.log(this.courseList)
       this.dataSource = new MatTableDataSource<Course>(this.courseList)
     })
   }

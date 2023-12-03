@@ -12,11 +12,13 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { ActivePipe } from './pipes/active.pipe'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [ActivePipe],
   imports: [
     CommonModule,
+    HttpClientModule,
     MatToolbarModule,
     MatNativeDateModule,
     MatTableModule,
@@ -30,6 +32,7 @@ import { ActivePipe } from './pipes/active.pipe'
     MatSnackBarModule
   ],
   exports: [
+    HttpClientModule,
     MatTableModule,
     MatToolbarModule,
     MatNativeDateModule,

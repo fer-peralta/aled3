@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router'
 import { SharedModule } from 'src/app/shared/shared.module'
 import { HomeComponent } from './home.component'
 
-const professorRoutes: Routes = [{ path: '', component: HomeComponent }]
+const homeRoutes: Routes = [{ path: '', component: HomeComponent }]
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, SharedModule, RouterModule.forChild(professorRoutes)]
+  imports: [CommonModule, SharedModule, RouterModule.forChild(homeRoutes)]
 })
 export class HomeModule {}
